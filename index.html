@@ -1,38 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EkóLab — Dados que falam a língua do seu negócio</title>
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts: Oswald (para títulos) e Inter (para corpo) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
     <!-- Favicon (Ícone da Aba com a nova logo) -->
     <link rel="icon" href="https://raw.githubusercontent.com/ThassiaLima/ekolab/main/logo" type="image/png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-37QYEG1NZ7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-37QYEG1NZ7');
+    </script>
 
     <style>
         /* Estilo customizado para usar as fontes */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* Fundo branco/cinza muito claro */
-            color: #1e293b; /* Texto azul escuro/cinza */
+            background-color: #f8fafc;
+            /* Fundo branco/cinza muito claro */
+            color: #1e293b;
+            /* Texto azul escuro/cinza */
         }
+
         .font-oswald {
             font-family: 'Oswald', sans-serif;
         }
-        
+
         /* Cores customizadas da nova identidade visual */
-        .bg-navy-eko { background-color: #0d2449; } /* Azul da logo */
-        .text-navy-eko { color: #0d2449; }
-        .text-orange-eko { color: #f97316; } /* Laranja da logo */
-        .bg-orange-eko { background-color: #f97316; }
-        .border-orange-eko { border-color: #f97316; }
+        .bg-navy-eko {
+            background-color: #0d2449;
+        }
+
+        /* Azul da logo */
+        .text-navy-eko {
+            color: #0d2449;
+        }
+
+        .text-orange-eko {
+            color: #f97316;
+        }
+
+        /* Laranja da logo */
+        .bg-orange-eko {
+            background-color: #f97316;
+        }
+
+        .border-orange-eko {
+            border-color: #f97316;
+        }
 
         /* Efeito de scroll suave */
         html {
@@ -43,35 +74,48 @@
         .card-hover-effect {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .card-hover-effect:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px -5px rgba(13, 36, 73, 0.15);
         }
+
         .header-shadow {
-             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
+
 <body class="bg-slate-50">
 
     <!-- =========== HEADER =========== -->
     <header class="bg-white/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 header-shadow">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="index.html" class="flex items-center space-x-3">
-                <img src="https://raw.githubusercontent.com/ThassiaLima/ekolab/main/logo" alt="Logo EkóLab" class="h-12">
+                <img src="https://raw.githubusercontent.com/ThassiaLima/ekolab/main/logo" alt="Logo EkóLab"
+                    class="h-12">
             </a>
             <nav class="hidden md:flex space-x-8 items-center">
-                <a href="#servicos" class="text-slate-600 hover:text-orange-eko transition duration-300 font-medium">Serviços</a>
-                <a href="#blog" class="text-slate-600 hover:text-orange-eko transition duration-300 font-medium">Blog</a>
-                <a href="#estudos-de-caso" class="text-slate-600 hover:text-orange-eko transition duration-300 font-medium">Estudos de Caso</a>
-                <a href="#ebook" class="text-slate-600 hover:text-orange-eko transition duration-300 font-medium">E-book Gratuito</a>
-                <a href="#contato" class="bg-navy-eko text-white font-bold py-2 px-5 rounded-lg shadow-lg hover:bg-opacity-90 transition duration-300">
+                <a href="#servicos"
+                    class="text-slate-600 hover:text-orange-eko transition duration-300 font-medium">Serviços</a>
+                <a href="#blog"
+                    class="text-slate-600 hover:text-orange-eko transition duration-300 font-medium">Blog</a>
+                <a href="#estudos-de-caso"
+                    class="text-slate-600 hover:text-orange-eko transition duration-300 font-medium">Estudos de Caso</a>
+                <a href="#ebook" class="text-slate-600 hover:text-orange-eko transition duration-300 font-medium">E-book
+                    Gratuito</a>
+                <a href="#contato"
+                    class="bg-navy-eko text-white font-bold py-2 px-5 rounded-lg shadow-lg hover:bg-opacity-90 transition duration-300">
                     Agendar Reunião
                 </a>
             </nav>
             <div class="md:hidden">
                 <button class="text-navy-eko">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
                 </button>
             </div>
         </div>
@@ -85,13 +129,17 @@
                     Dados que falam a <br class="hidden md:block"> língua do seu negócio
                 </h1>
                 <p class="mt-6 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
-                    Democratizamos a análise de dados para pequenos negócios digitais liderados por pessoas pretas. Traduzimos números em decisões com propósito.
+                    Democratizamos a análise de dados para pequenos negócios. <br>
+                    Traduzimos números em decisões com propósito.
                 </p>
-                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#ebook" class="w-full sm:w-auto bg-orange-eko text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300 text-lg">
+                <div
+                    class="mt-10 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#ebook"
+                        class="w-full sm:w-auto bg-orange-eko text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300 text-lg">
                         Baixar E-book Grátis
                     </a>
-                    <a href="#contato" class="w-full sm:w-auto bg-transparent border-2 border-navy-eko text-navy-eko font-bold py-3.5 px-10 rounded-lg hover:bg-navy-eko hover:text-white transition duration-300 text-lg">
+                    <a href="#contato"
+                        class="w-full sm:w-auto bg-transparent border-2 border-navy-eko text-navy-eko font-bold py-3.5 px-10 rounded-lg hover:bg-navy-eko hover:text-white transition duration-300 text-lg">
                         Fale com um consultor
                     </a>
                 </div>
@@ -102,32 +150,42 @@
         <section id="servicos" class="py-24 bg-slate-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="font-oswald text-4xl md:text-5xl font-bold text-navy-eko uppercase">Inteligência de dados para sua realidade</h2>
-                    <p class="mt-4 text-slate-500 max-w-2xl mx-auto text-lg">Oferecemos soluções práticas, acessíveis e orientadas à ação.</p>
+                    <h2 class="font-oswald text-4xl md:text-5xl font-bold text-navy-eko uppercase">Inteligência de dados
+                        para sua realidade</h2>
+                    <p class="mt-4 text-slate-500 max-w-2xl mx-auto text-lg">Oferecemos soluções práticas, acessíveis e
+                        orientadas à ação.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="card-hover-effect bg-white rounded-lg p-8 border border-slate-200 text-center">
-                        <h3 class="font-oswald text-2xl font-bold text-navy-eko mb-4 uppercase">Dashboards e Métricas</h3>
-                        <p class="text-slate-600">Desenvolvimento de painéis visuais e planilhas com as métricas essenciais para o seu negócio crescer com clareza.</p>
+                        <h3 class="font-oswald text-2xl font-bold text-navy-eko mb-4 uppercase">Dashboards e Métricas
+                        </h3>
+                        <p class="text-slate-600">Desenvolvimento de painéis visuais e planilhas com as métricas
+                            essenciais para o seu negócio crescer com clareza.</p>
                     </div>
                     <div class="card-hover-effect bg-white rounded-lg p-8 border border-slate-200 text-center">
-                        <h3 class="font-oswald text-2xl font-bold text-navy-eko mb-4 uppercase">Consultoria Estratégica</h3>
-                        <p class="text-slate-600">Análise de dados personalizada para identificar oportunidades, otimizar processos e aumentar seu impacto.</p>
+                        <h3 class="font-oswald text-2xl font-bold text-navy-eko mb-4 uppercase">Consultoria Estratégica
+                        </h3>
+                        <p class="text-slate-600">Análise de dados personalizada para identificar oportunidades,
+                            otimizar processos e aumentar seu impacto.</p>
                     </div>
                     <div class="card-hover-effect bg-white rounded-lg p-8 border border-slate-200 text-center">
-                        <h3 class="font-oswald text-2xl font-bold text-navy-eko mb-4 uppercase">Alfabetização em Dados</h3>
-                        <p class="text-slate-600">Mentorias e materiais educativos para que você e sua equipe tomem decisões mais inteligentes e seguras.</p>
+                        <h3 class="font-oswald text-2xl font-bold text-navy-eko mb-4 uppercase">Alfabetização em Dados
+                        </h3>
+                        <p class="text-slate-600">Mentorias e materiais educativos para que você e sua equipe tomem
+                            decisões mais inteligentes e seguras.</p>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- =========== BLOG SECTION =========== -->
         <section id="blog" class="py-24 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="font-oswald text-4xl md:text-5xl font-bold text-navy-eko uppercase">Conteúdos para Decolar</h2>
-                    <p class="mt-4 text-slate-500 max-w-2xl mx-auto text-lg">Reflexões e dicas sobre dados, ancestralidade e negócios.</p>
+                    <h2 class="font-oswald text-4xl md:text-5xl font-bold text-navy-eko uppercase">Conteúdos para
+                        Decolar</h2>
+                    <p class="mt-4 text-slate-500 max-w-2xl mx-auto text-lg">Reflexões e dicas sobre dados, produtos,
+                        inovação e negócios.</p>
                 </div>
                 <div id="blog-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Posts serão inseridos aqui -->
@@ -140,7 +198,8 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="font-oswald text-4xl md:text-5xl font-bold text-navy-eko uppercase">Estudos de Caso</h2>
-                    <p class="mt-4 text-slate-500 max-w-2xl mx-auto text-lg">Veja na prática como ajudamos negócios a tomarem decisões com propósito.</p>
+                    <p class="mt-4 text-slate-500 max-w-2xl mx-auto text-lg">Veja na prática como ajudamos negócios a
+                        tomarem decisões com propósito.</p>
                 </div>
                 <div id="case-studies-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Case studies serão inseridos aqui -->
@@ -153,25 +212,30 @@
             <div class="container mx-auto px-6">
                 <div class="rounded-lg lg:flex lg:items-center lg:justify-between">
                     <div class="lg:w-1/2 text-center lg:text-left">
-                        <h2 class="font-oswald text-4xl font-bold text-white uppercase">Decole com Dados!</h2>
+                        <h2 class="font-oswald text-4xl font-bold text-white uppercase">Decida com Dados!</h2>
                         <p class="mt-4 text-lg text-slate-300">
-                            Baixe nosso e-book gratuito e aprenda os 5 passos iniciais para organizar os dados do seu negócio e tomar decisões com mais propósito.
+                            Baixe gratuitamente o ebook “Decida com Dados” e descubra como aplicar análise de dados no
+                            dia a dia do seu negócio — mesmo que você não seja da área técnica!
                         </p>
                     </div>
                     <div class="mt-8 lg:mt-0 lg:w-1/2 lg:pl-12">
                         <!-- Formulário que será enviado via JavaScript -->
                         <form id="lead-form" class="space-y-4">
                             <div>
-                                <input type="text" name="name" id="form-name" placeholder="Seu nome" required class="w-full bg-white/10 border border-slate-500 rounded-lg py-3 px-4 text-white placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-eko">
+                                <input type="text" name="name" id="form-name" placeholder="Seu nome" required
+                                    class="w-full bg-white/10 border border-slate-500 rounded-lg py-3 px-4 text-white placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-eko">
                             </div>
                             <div>
-                                <input type="email" name="email" id="form-email" placeholder="Seu melhor e-mail" required class="w-full bg-white/10 border border-slate-500 rounded-lg py-3 px-4 text-white placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-eko">
+                                <input type="email" name="email" id="form-email" placeholder="Seu melhor e-mail"
+                                    required
+                                    class="w-full bg-white/10 border border-slate-500 rounded-lg py-3 px-4 text-white placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-eko">
                             </div>
-                            <button type="submit" id="submit-button" class="w-full bg-orange-eko text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300">
+                            <button type="submit" id="submit-button"
+                                class="w-full bg-orange-eko text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300">
                                 Quero meu E-book!
                             </button>
                         </form>
-                         <p id="form-message" class="text-xs text-slate-400 mt-4 text-center"></p>
+                        <p id="form-message" class="text-xs text-slate-400 mt-4 text-center"></p>
                     </div>
                 </div>
             </div>
@@ -180,27 +244,30 @@
         <!-- =========== AGENDAR REUNIÃO (CONTATO) =========== -->
         <section id="contato" class="py-24 text-center bg-white">
             <div class="container mx-auto px-6">
-                 <h2 class="font-oswald text-4xl md:text-5xl font-bold text-navy-eko uppercase">Vamos conversar?</h2>
-                 <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
-                    Agende uma conversa de 30 minutos, sem compromisso, para entendermos seus desafios e como a EkóLab pode ajudar a impulsionar seu negócio.
+                <h2 class="font-oswald text-4xl md:text-5xl font-bold text-navy-eko uppercase">Vamos conversar?</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+                    Agende uma conversa de 30 minutos, sem compromisso, para entendermos seus desafios e como a EkóLab
+                    pode ajudar a impulsionar seu negócio.
                 </p>
                 <div class="mt-10">
-                    <a href="https://calendly.com/seu-usuario/30min" target="_blank" rel="noopener noreferrer" class="inline-block bg-orange-eko text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300 text-lg">
+                    <a href="https://bit.ly/consultoriaEkoLab" target="_blank" rel="noopener noreferrer"
+                        class="inline-block bg-orange-eko text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300 text-lg">
                         Agendar Consultoria Gratuita
                     </a>
                 </div>
             </div>
         </section>
     </main>
-    
+
     <!-- =========== FOOTER =========== -->
     <footer class="bg-slate-100 border-t border-slate-200">
         <div class="container mx-auto px-6 py-8 text-center text-slate-500">
-            <p>&copy; 2025 EkóLab. Todos os direitos reservados.</p>
-            <p class="mt-2 text-sm">Dados que falam a língua do seu negócio.</p>
+
             <div class="mt-4 flex justify-center space-x-6">
-                <a href="#" class="hover:text-orange-eko transition duration-300">LinkedIn</a>
-                <a href="#" class="hover:text-orange-eko transition duration-300">Instagram</a>
+                <a href="https://www.linkedin.com/company/ek%C3%B3lab/?viewAsMember=true"
+                    class="hover:text-orange-eko transition duration-300">LinkedIn</a>
+                <a href="https://www.instagram.com/ekolabs?igsh=MWV5Z2prNHpzaWJxOA=="
+                    class="hover:text-orange-eko transition duration-300">Instagram</a>
             </div>
         </div>
     </footer>
@@ -213,51 +280,116 @@
         // =================================================================================
         const contentData = {
             "posts": [
+            
                 {
                     "id": 1,
-                    "category": "MÉTRICAS",
-                    "title": "5 Métricas que todo pequeno negócio deveria acompanhar",
-                    "summary": "Pare de se perder em planilhas! Foco no que realmente importa para o crescimento do seu negócio digital.",
-                    "image": "https://placehold.co/600x400/0d2449/f97316?text=Métricas",
+                    "category": "TECH",
+                    "title": "People Analytics: É tech, é RH, é dados?",
+                    "summary": "Descubra como dados e tecnologia estão ajudando a criar ambientes de trabalho mais humanos, inteligentes e estratégicos.",
+                    "image": "https://placehold.co/600x400/0d2449/ffffff?text=People+Analytics",
                     "author": "Thassia Lima",
                     "date": "22 de Junho, 2025",
                     "fullContentHTML": `
-                        <p>Este é o parágrafo de introdução do seu post. É aqui que você captura a atenção do leitor e apresenta o tema que será abordado. Tente ser direto e instigante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
-                        <p>Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue.</p>
-                        <h2>Um Subtítulo Para Organizar as Ideias</h2>
-                        <p>Aqui você desenvolve um ponto específico do seu post. Usar subtítulos ajuda a quebrar o texto e facilita a leitura, especialmente em telas digitais. Você pode incluir listas para tornar o conteúdo mais escaneável:</p>
+                        <p>Você já ouviu falar em <em>People Analytics</em> e pensou: “É tecnologia? É RH? É mais um daqueles nomes bonitos pra planilha de Excel?”</p>
+                        <p><strong>Spoiler: é tudo isso (menos a parte da planilha... ou quase).</strong></p>
+                        <p>People Analytics é uma área onde <strong>dados e pessoas andam juntos — literalmente.</strong> A proposta é usar análise de dados para entender, apoiar e evoluir a jornada dos colaboradores dentro das empresas. Não é sobre transformar gente em números, mas sobre <strong>usar números pra tomar decisões mais humanas</strong>.</p>
+
+                        <h2>Que tipo de perguntas o People Analytics responde?</h2>
                         <ul>
-                            <li>Este é o primeiro item de uma lista.</li>
-                            <li>O segundo item pode explicar um conceito chave.</li>
-                            <li>E o terceiro item pode dar um exemplo prático.</li>
+                        <li>Quais perfis têm mais chance de se engajar (ou de pedir demissão)?</li>
+                        <li>Que tipo de liderança gera mais resultado e satisfação?</li>
+                        <li>Como medir o impacto real de treinamentos ou mudanças organizacionais?</li>
                         </ul>
-                        <p>Continue desenvolvendo seus argumentos. Lembre-se que você pode adicionar <a href="#">links para outros artigos</a> ou fontes externas para enriquecer o seu conteúdo. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna.</p>
+                        <p>Essas respostas não vêm só do feeling. Elas vêm de dados bem estruturados, cruzamentos inteligentes e muita colaboração entre <strong>Tech, RH e Estratégia</strong>.</p>
+
+                        <h2>Onde entra a tecnologia nisso tudo?</h2>
+                        <ul>
+                        <li><strong>Engenharia de Dados:</strong> coleta e organiza informações espalhadas por sistemas diversos (ATS, ERPs, plataformas de clima, etc.).</li>
+                        <li><strong>Ciência de Dados:</strong> cria modelos preditivos e análises para entender padrões de comportamento.</li>
+                        <li><strong>Dashboards e visualizações:</strong> transformam insights em decisões com foco nas pessoas.</li>
+                        </ul>
+
+                        <p>O mais legal? <strong>People Analytics é tech com propósito.</strong></p>
+                        <ul>
+                        <li>É usar machine learning pra melhorar bem-estar.</li>
+                        <li>É automatizar processos pra liberar mais tempo pro que importa.</li>
+                        <li>É transformar dados frios em decisões quentes.</li>
+                        </ul>
+
+                        <h2>O que vem por aí?</h2>
+                        <p>Nos próximos conteúdos, quero explorar:</p>
+                        <ul>
+                        <li>Ferramentas e stacks comuns em projetos de People Analytics</li>
+                        <li>Como começar pequeno (mesmo sem um time de dados completo)</li>
+                        <li>Dicas para techs que querem se aproximar do universo de RH — e vice-versa</li>
+                        </ul>
+
+                        <p>Porque no fim das contas, <strong>cuidar de pessoas com inteligência também é coisa de tech.</strong></p>
                     `
                 },
+
                 {
                     "id": 2,
-                    "category": "Teste",
-                    "title": "5 testes para se fazer",
-                    "summary": "Pare de se perder em planilhas! Foco no que realmente importa para o crescimento do seu negócio digital.",
-                    "image": "https://placehold.co/600x400/0d2449/f97316?text=Métricas",
+                    "category": "PRODUTO",
+                    "title": "Priorização não é sobre o que você gosta — é sobre impacto",
+                    "summary": "Dizer 'não' é tão estratégico quanto dizer 'sim'. Descubra por que a priorização é uma das habilidades mais valiosas em Produto.",
+                    "image": "https://placehold.co/600x400/0d2449/ffffff?text=Priorização",
                     "author": "Thassia Lima",
                     "date": "22 de Junho, 2025",
                     "fullContentHTML": `
-                        <p>Faça alguns testes</p>
+                        <p>Se tem algo que aprendi em Produto é que <strong>dizer “não” é tão importante quanto dizer “sim”</strong>. Uma das habilidades mais estratégicas de um PM é a priorização. E, diferente do que parece, isso não significa apenas organizar uma lista de tarefas ou montar um backlog.</p>
+
+                        <p>Priorização exige clareza de objetivo, contexto do negócio e, acima de tudo, <strong>capacidade de avaliar impacto versus esforço</strong>. É aqui que muitos produtos se perdem: quando tudo vira prioridade ou quando o gosto pessoal fala mais alto que o valor real para o usuário ou para o negócio.</p>
+
+                        <h2>Reflexões que guiam minha priorização</h2>
+                        <ul>
+                        <li><strong>Tudo o que entra na fila tira algo do topo</strong> — priorizar não é adicionar, é escolher.</li>
+                        <li><strong>Feature bonita, mas sem aderência, é dívida</strong> — de tempo, de foco e de expectativa.</li>
+                        <li><strong>Priorizar é fazer apostas conscientes</strong> — com base em dados, escuta ativa e visão clara de onde se quer chegar.</li>
+                        </ul>
+
+                        <p>No próximo post, quero compartilhar alguns frameworks que me ajudam a tomar decisões difíceis no dia a dia — e, principalmente, como adaptar cada um ao contexto real (porque nem sempre a teoria resolve sozinha).</p>
                     `
                 },
-                 {
+                                    {
                     "id": 3,
-                    "category": "Modelo três",
-                    "title": "5 testes para se fazer",
-                    "summary": "Pare de se perder em planilhas! Foco no que realmente importa para o crescimento do seu negócio digital.",
-                    "image": "https://placehold.co/600x400/0d2449/f97316?text=Métricas",
+                    "category": "NEGÓCIOS",
+                    "title": "Growth Marketing: mais que anúncios, é crescimento com estratégia",
+                    "summary": "Entenda o que realmente é Growth Marketing e por que ele vai muito além de impulsionar posts no Instagram.",
+                    "image": "https://placehold.co/600x400/0d2449/ffffff?text=Growth+Marketing",
                     "author": "Thassia Lima",
                     "date": "22 de Junho, 2025",
                     "fullContentHTML": `
-                        <p>Faça alguns testes</p>
+                        <p>Quando falamos de <strong>Growth Marketing</strong>, muita gente ainda pensa em tráfego pago ou performance digital. Mas essa é só a ponta do iceberg.</p>
+
+                        <p>Growth é um <strong>modelo de pensamento</strong> orientado a experimentos, dados e aprendizado rápido. O foco não é só vender mais, mas <strong>crescer de forma sustentável e escalável</strong>.</p>
+
+                        <h2>O que faz o marketing ser "growth"?</h2>
+                        <p>O mindset de Growth Marketing tem algumas características marcantes:</p>
+                        <ul>
+                        <li><strong>Experimentação constante:</strong> testar hipóteses rápidas com baixo custo.</li>
+                        <li><strong>Análise de dados em tempo real:</strong> aprender com o que funciona (ou não).</li>
+                        <li><strong>Visão de funil completo:</strong> olhar além da aquisição e pensar também em ativação, retenção, receita e recomendação.</li>
+                        </ul>
+
+                        <p>Ou seja, Growth não é um botão mágico. É um <strong>processo contínuo de melhoria</strong>, onde a criatividade encontra a análise para gerar resultados reais.</p>
+
+                        <h2>Growth serve só para startups?</h2>
+                        <p>Definitivamente não. Pequenos negócios, e-commerces, criadores de conteúdo e até empresas tradicionais podem (e devem!) aplicar os princípios de Growth. Basta ter clareza do objetivo, disposição para testar e uma rotina mínima de acompanhamento.</p>
+
+                        <h2>Nos próximos posts...</h2>
+                        <p>Quero mostrar na prática:</p>
+                        <ul>
+                        <li>Como montar seu primeiro funil de Growth</li>
+                        <li>Exemplos de testes simples que geram grandes aprendizados</li>
+                        <li>Dicas de ferramentas para começar do zero</li>
+                        </ul>
+
+                        <p>Porque crescer de forma inteligente é para todos — e Growth Marketing pode ser o motor que seu negócio precisava.</p>
                     `
                 }
+
+
             ],
             "cases": [
                 {
@@ -265,8 +397,8 @@
                     "client": "Negócio de Impacto Periférico",
                     "title": "Aumento de 25% nas vendas com análise de público",
                     "summary": "Identificamos padrões de consumo e otimizamos a estratégia de marketing digital, resultando em um crescimento significativo.",
-                    "image": "https://placehold.co/600x400/0d2449/ffffff?text=Case+1",
-                     "author": "Thassia Lima",
+                    "image": "https://placehold.co/600x400/0d2449/f97316?text=Case+1",
+                    "author": "Thassia Lima",
                     "date": "30 de Junho, 2025",
                     "fullContentHTML": "<p>Conteúdo completo do estudo de caso vai aqui.</p>"
                 }
@@ -286,7 +418,7 @@
             posts.forEach(post => {
                 const postElement = document.createElement('div');
                 postElement.className = 'card-hover-effect bg-slate-50 rounded-lg overflow-hidden border border-slate-200';
-                
+
                 // O link agora leva para post.html e passa o ID do post como parâmetro
                 postElement.innerHTML = `
                     <img src="${post.image}" alt="Imagem do post sobre ${post.title}" class="w-full h-48 object-cover">
@@ -297,7 +429,7 @@
                         <a href="post.html?id=${post.id}&type=blog" class="font-bold text-orange-eko hover:underline">Leia mais →</a>
                     </div>
                 `;
-                
+
                 blogContainer.appendChild(postElement);
             });
         }
@@ -306,7 +438,7 @@
         function loadCaseStudies() {
             const cases = contentData.cases;
             const caseStudiesContainer = document.getElementById('case-studies-container');
-            
+
             if (!cases || cases.length === 0) {
                 caseStudiesContainer.innerHTML = '<p class="text-center col-span-3 text-slate-500">Nenhum estudo de caso encontrado.</p>';
                 return;
@@ -316,7 +448,7 @@
             cases.forEach(caseItem => {
                 const caseElement = document.createElement('div');
                 caseElement.className = 'card-hover-effect bg-white rounded-lg overflow-hidden border border-slate-200';
-                
+
                 // Atualize o link dos estudos de caso para usar o mesmo sistema dinâmico
                 caseElement.innerHTML = `
                     <img src="${caseItem.image}" alt="Imagem do estudo de caso sobre ${caseItem.title}" class="w-full h-48 object-cover">
@@ -327,7 +459,7 @@
                         <a href="post.html?id=${caseItem.id}&type=cases" class="font-bold text-orange-eko hover:underline">Ver detalhes →</a>
                     </div>
                 `;
-                
+
                 caseStudiesContainer.appendChild(caseElement);
             });
         }
@@ -345,32 +477,32 @@
 
             submitButton.disabled = true;
             submitButton.textContent = 'Enviando...';
-            
+
             const formData = new FormData(leadForm);
 
             fetch(SCRIPT_URL, {
                 method: 'POST',
                 body: formData
             })
-            .then(res => res.json())
-            .then(data => {
-                if(data.result === 'success') {
-                    formMessage.textContent = 'Sucesso! Verifique seu e-mail.';
-                    formMessage.style.color = '#34d399'; // Verde
-                    leadForm.reset(); 
-                } else {
-                    throw new Error(data.message || 'Ocorreu um erro.');
-                }
-            })
-            .catch(error => {
-                console.error('Error!', error.message);
-                formMessage.textContent = 'Ops! Algo deu errado. Tente novamente.';
-                formMessage.style.color = '#f87171'; // Vermelho
-            })
-            .finally(() => {
-                submitButton.disabled = false;
-                submitButton.textContent = 'Quero meu E-book!';
-            });
+                .then(res => res.json())
+                .then(data => {
+                    if (data.result === 'success') {
+                        formMessage.textContent = 'Sucesso! Verifique seu e-mail.';
+                        formMessage.style.color = '#34d399'; // Verde
+                        leadForm.reset();
+                    } else {
+                        throw new Error(data.message || 'Ocorreu um erro.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    formMessage.textContent = 'Ops! Algo deu errado. Tente novamente.';
+                    formMessage.style.color = '#f87171'; // Vermelho
+                })
+                .finally(() => {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Quero meu E-book!';
+                });
         });
 
         // Executa as funções quando o conteúdo da página é carregado
@@ -381,4 +513,5 @@
     </script>
 
 </body>
+
 </html>
