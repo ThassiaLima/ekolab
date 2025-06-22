@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EkóLab — Dados que falam a língua do seu negócio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Oswald (para títulos) e Inter (para corpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon (Ícone da Aba com a nova logo) -->
+    <link rel="icon" href="https://i.ibb.co/tKjV4zV/Eko-1-11zon.png" type="image/png">
+
+    <style>
+        /* Estilo customizado para usar as fontes */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Fundo branco/cinza muito claro */
+            color: #1e293b; /* Texto azul escuro/cinza */
+        }
+        .font-oswald {
+            font-family: 'Oswald', sans-serif;
+        }
+        
+        /* Cores customizadas da nova identidade visual */
+        .bg-navy-eko { background-color: #0d2449; } /* Azul da logo */
+        .text-navy-eko { color: #0d2449; }
+        .text-orange-eko { color: #f97316; } /* Laranja da logo */
+        .bg-orange-eko { background-color: #f97316; }
+        .border-orange-eko { border-color: #f97316; }
+
+        /* Efeito de scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Efeito sutil no card */
+        .card-hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px -5px rgba(13, 36, 73, 0.15);
+        }
+        .header-shadow {
+             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <!-- =========== HEADER =========== -->
+    <header class="bg-white/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 header-shadow">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <img src="https://i.ibb.co/tKjV4zV/Eko-1-11zon.png" alt="Logo EkóLab" class="h-12">
+            </a>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#servicos" class="text-slate-600 hover:text-orange-eko transition duration-300 font-medium">Serviços</a>
+                <a href="#blog" class="text-slate-600 hover:text-orange-eko transition duration-300 font-medium">Blog</a>
+                <a href="#ebook" class="text-slate-600 hover:text-orange-eko transition duration-300 font-medium">E-book Gratuito</a>
+                <a href="#contato" class="bg-navy-eko text-white font-bold py-2 px-5 rounded-lg shadow-lg hover:bg-opacity-90 transition duration-300">
+                    Agendar Reunião
+                </a>
+            </nav>
+            <div class="md:hidden">
+                <button class="text-navy-eko">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- =========== HERO SECTION =========== -->
+        <section id="hero" class="pt-36 pb-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="font-oswald text-5xl md:text-7xl font-bold text-navy-eko leading-tight uppercase">
+                    Dados que falam a <br class="hidden md:block"> língua do seu negócio
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
+                    Democratizamos a análise de dados para pequenos negócios digitais liderados por pessoas pretas. Traduzimos números em decisões com propósito.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#ebook" class="w-full sm:w-auto bg-orange-eko text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300 text-lg">
+                        Baixar E-book Grátis
+                    </a>
+                    <a href="#contato" class="w-full sm:w-auto bg-transparent border-2 border-navy-eko text-navy-eko font-bold py-3.5 px-10 rounded-lg hover:bg-navy-eko hover:text-white transition duration-300 text-lg">
+                        Fale com um consultor
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========== SERVIÇOS =========== -->
+        <section id="servicos" class="py-24 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="font-oswald text-4xl md:text-5xl font-bold text-navy-eko uppercase">Inteligência de dados para sua realidade</h2>
+                    <p class="mt-4 text-slate-500 max-w-2xl mx-auto text-lg">Oferecemos soluções práticas, acessíveis e orientadas à ação.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card-hover-effect bg-white rounded-lg p-8 border border-slate-200 text-center">
+                        <h3 class="font-oswald text-2xl font-bold text-navy-eko mb-4 uppercase">Dashboards e Métricas</h3>
+                        <p class="text-slate-600">Desenvolvimento de painéis visuais e planilhas com as métricas essenciais para o seu negócio crescer com clareza.</p>
+                    </div>
+                    <div class="card-hover-effect bg-white rounded-lg p-8 border border-slate-200 text-center">
+                        <h3 class="font-oswald text-2xl font-bold text-navy-eko mb-4 uppercase">Consultoria Estratégica</h3>
+                        <p class="text-slate-600">Análise de dados personalizada para identificar oportunidades, otimizar processos e aumentar seu impacto.</p>
+                    </div>
+                    <div class="card-hover-effect bg-white rounded-lg p-8 border border-slate-200 text-center">
+                        <h3 class="font-oswald text-2xl font-bold text-navy-eko mb-4 uppercase">Alfabetização em Dados</h3>
+                        <p class="text-slate-600">Mentorias e materiais educativos para que você e sua equipe tomem decisões mais inteligentes e seguras.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- =========== BLOG SECTION =========== -->
+        <section id="blog" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="font-oswald text-4xl md:text-5xl font-bold text-navy-eko uppercase">Conteúdos para Decolar</h2>
+                    <p class="mt-4 text-slate-500 max-w-2xl mx-auto text-lg">Reflexões e dicas sobre dados, ancestralidade e negócios.</p>
+                </div>
+                <!-- O container do blog será preenchido dinamicamente pelo JavaScript -->
+                <div id="blog-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Posts serão inseridos aqui -->
+                </div>
+            </div>
+        </section>
+
+        <!-- =========== EBOOK (FORMULÁRIO) =========== -->
+        <section id="ebook" class="py-24 bg-navy-eko">
+            <div class="container mx-auto px-6">
+                <div class="rounded-lg lg:flex lg:items-center lg:justify-between">
+                    <div class="lg:w-1/2 text-center lg:text-left">
+                        <h2 class="font-oswald text-4xl font-bold text-white uppercase">Decole com Dados!</h2>
+                        <p class="mt-4 text-lg text-slate-300">
+                            Baixe nosso e-book gratuito e aprenda os 5 passos iniciais para organizar os dados do seu negócio e tomar decisões com mais propósito.
+                        </p>
+                    </div>
+                    <div class="mt-8 lg:mt-0 lg:w-1/2 lg:pl-12">
+                        <form action="https://formspree.io/f/your_unique_id" method="POST" class="space-y-4">
+                            <div>
+                                <input type="text" name="name" placeholder="Seu nome" required class="w-full bg-white/10 border border-slate-500 rounded-lg py-3 px-4 text-white placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-eko">
+                            </div>
+                            <div>
+                                <input type="email" name="email" placeholder="Seu melhor e-mail" required class="w-full bg-white/10 border border-slate-500 rounded-lg py-3 px-4 text-white placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-eko">
+                            </div>
+                            <button type="submit" class="w-full bg-orange-eko text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300">
+                                Quero meu E-book!
+                            </button>
+                        </form>
+                        <p class="text-xs text-slate-400 mt-4 text-center">Respeitamos sua privacidade. Nada de spam.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========== AGENDAR REUNIÃO (CONTATO) =========== -->
+        <section id="contato" class="py-24 text-center bg-white">
+            <div class="container mx-auto px-6">
+                 <h2 class="font-oswald text-4xl md:text-5xl font-bold text-navy-eko uppercase">Vamos conversar?</h2>
+                 <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+                    Agende uma conversa de 30 minutos, sem compromisso, para entendermos seus desafios e como a EkóLab pode ajudar a impulsionar seu negócio.
+                </p>
+                <div class="mt-10">
+                    <a href="https://calendly.com/seu-usuario/30min" target="_blank" rel="noopener noreferrer" class="inline-block bg-orange-eko text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300 text-lg">
+                        Agendar Consultoria Gratuita
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- =========== FOOTER =========== -->
+    <footer class="bg-slate-100 border-t border-slate-200">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-500">
+            <p>&copy; 2025 EkóLab. Todos os direitos reservados.</p>
+            <p class="mt-2 text-sm">Dados que falam a língua do seu negócio.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="#" class="hover:text-orange-eko transition duration-300">LinkedIn</a>
+                <a href="#" class="hover:text-orange-eko transition duration-300">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =========== SCRIPT PARA BLOG DINÂMICO =========== -->
+    <script>
+        // Função para carregar e exibir os posts do blog
+        function loadBlogPosts() {
+            // Os dados do blog agora estão diretamente no código para evitar erros de carregamento de arquivo.
+            // Para adicionar um novo post, basta copiar um dos blocos abaixo e alterar o conteúdo.
+            const blogData = {
+                "posts": [
+                    {
+                        "category": "MÉTRICAS",
+                        "title": "5 Métricas que todo pequeno negócio deveria acompanhar",
+                        "summary": "Pare de se perder em planilhas! Foco no que realmente importa para o crescimento do seu negócio digital.",
+                        "image": "https://placehold.co/600x400/0d2449/f97316?text=Métricas",
+                        "url": "#"
+                    },
+                    {
+                        "category": "ESTRATÉGIA",
+                        "title": "Intuição e Dados: A sabedoria ancestral na era do BI",
+                        "summary": "Como a sua bagagem cultural pode ser o seu maior diferencial na hora de analisar dados e definir estratégias.",
+                        "image": "https://placehold.co/600x400/f97316/0d2449?text=Estratégia",
+                        "url": "#"
+                    },
+                    {
+                        "category": "FERRAMENTAS",
+                        "title": "Looker Studio: Como criar seu primeiro dashboard de graça",
+                        "summary": "Um passo a passo descomplicado para você começar a visualizar seus dados de forma profissional e gratuita.",
+                        "image": "https://placehold.co/600x400/1e293b/ffffff?text=Ferramentas",
+                        "url": "#"
+                    }
+                ]
+            };
+
+            const posts = blogData.posts;
+            const blogContainer = document.getElementById('blog-container');
+            
+            if (!posts || posts.length === 0) {
+                blogContainer.innerHTML = '<p class="text-center col-span-3 text-slate-500">Nenhum post encontrado.</p>';
+                return;
+            }
+
+            blogContainer.innerHTML = '';
+
+            posts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.className = 'card-hover-effect bg-slate-50 rounded-lg overflow-hidden border border-slate-200';
+                
+                postElement.innerHTML = `
+                    <img src="${post.image}" alt="Imagem do post sobre ${post.title}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm font-semibold text-orange-eko">${post.category}</span>
+                        <h3 class="font-oswald text-2xl font-bold text-navy-eko mt-2 mb-3">${post.title}</h3>
+                        <p class="text-slate-600 mb-4">${post.summary}</p>
+                        <a href="${post.url}" class="font-bold text-orange-eko hover:underline">Leia mais →</a>
+                    </div>
+                `;
+                
+                blogContainer.appendChild(postElement);
+            });
+        }
+
+        // Executa a função quando o conteúdo da página é carregado
+        document.addEventListener('DOMContentLoaded', loadBlogPosts);
+    </script>
+
+</body>
+</html>
