@@ -63,6 +63,7 @@
             <nav class="hidden md:flex space-x-8 items-center">
                 <a href="#servicos" class="text-slate-600 hover:text-orange-eko transition duration-300 font-medium">Serviços</a>
                 <a href="#blog" class="text-slate-600 hover:text-orange-eko transition duration-300 font-medium">Blog</a>
+                <a href="#estudos-de-caso" class="text-slate-600 hover:text-orange-eko transition duration-300 font-medium">Estudos de Caso</a>
                 <a href="#ebook" class="text-slate-600 hover:text-orange-eko transition duration-300 font-medium">E-book Gratuito</a>
                 <a href="#contato" class="bg-navy-eko text-white font-bold py-2 px-5 rounded-lg shadow-lg hover:bg-opacity-90 transition duration-300">
                     Agendar Reunião
@@ -77,7 +78,8 @@
     </header>
 
     <main>
-        <!-- =========== HERO SECTION =========== -->
+        <!-- ... (As seções Hero, Serviços, Blog e Estudos de Caso continuam iguais) ... -->
+         <!-- =========== HERO SECTION =========== -->
         <section id="hero" class="pt-36 pb-24 bg-white">
             <div class="container mx-auto px-6 text-center">
                 <h1 class="font-oswald text-5xl md:text-7xl font-bold text-navy-eko leading-tight uppercase">
@@ -128,14 +130,26 @@
                     <h2 class="font-oswald text-4xl md:text-5xl font-bold text-navy-eko uppercase">Conteúdos para Decolar</h2>
                     <p class="mt-4 text-slate-500 max-w-2xl mx-auto text-lg">Reflexões e dicas sobre dados, ancestralidade e negócios.</p>
                 </div>
-                <!-- O container do blog será preenchido dinamicamente pelo JavaScript -->
                 <div id="blog-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Posts serão inseridos aqui -->
                 </div>
             </div>
         </section>
 
-        <!-- =========== EBOOK (FORMULÁRIO) =========== -->
+        <!-- =========== CASE STUDIES SECTION =========== -->
+        <section id="estudos-de-caso" class="py-24 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="font-oswald text-4xl md:text-5xl font-bold text-navy-eko uppercase">Estudos de Caso</h2>
+                    <p class="mt-4 text-slate-500 max-w-2xl mx-auto text-lg">Veja na prática como ajudamos negócios a tomarem decisões com propósito.</p>
+                </div>
+                <div id="case-studies-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Case studies serão inseridos aqui -->
+                </div>
+            </div>
+        </section>
+
+        <!-- =========== EBOOK (FORMULÁRIO CONECTADO AO SHEETS) =========== -->
         <section id="ebook" class="py-24 bg-navy-eko">
             <div class="container mx-auto px-6">
                 <div class="rounded-lg lg:flex lg:items-center lg:justify-between">
@@ -146,18 +160,19 @@
                         </p>
                     </div>
                     <div class="mt-8 lg:mt-0 lg:w-1/2 lg:pl-12">
-                        <form action="https://formspree.io/f/xnnvgagl" method="POST" class="space-y-4">
+                        <!-- Formulário que será enviado via JavaScript -->
+                        <form id="lead-form" class="space-y-4">
                             <div>
-                                <input type="text" name="name" placeholder="Seu nome" required class="w-full bg-white/10 border border-slate-500 rounded-lg py-3 px-4 text-white placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-eko">
+                                <input type="text" name="name" id="form-name" placeholder="Seu nome" required class="w-full bg-white/10 border border-slate-500 rounded-lg py-3 px-4 text-white placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-eko">
                             </div>
                             <div>
-                                <input type="email" name="email" placeholder="Seu melhor e-mail" required class="w-full bg-white/10 border border-slate-500 rounded-lg py-3 px-4 text-white placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-eko">
+                                <input type="email" name="email" id="form-email" placeholder="Seu melhor e-mail" required class="w-full bg-white/10 border border-slate-500 rounded-lg py-3 px-4 text-white placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-eko">
                             </div>
-                            <button type="submit" class="w-full bg-orange-eko text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300">
+                            <button type="submit" id="submit-button" class="w-full bg-orange-eko text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300">
                                 Quero meu E-book!
                             </button>
                         </form>
-                        <p class="text-xs text-slate-400 mt-4 text-center">Respeitamos sua privacidade. Nada de spam.</p>
+                         <p id="form-message" class="text-xs text-slate-400 mt-4 text-center"></p>
                     </div>
                 </div>
             </div>
@@ -191,68 +206,92 @@
         </div>
     </footer>
 
-    <!-- =========== SCRIPT PARA BLOG DINÂMICO =========== -->
+    <!-- =========== SCRIPT PARA CONTEÚDO DINÂMICO =========== -->
     <script>
         // Função para carregar e exibir os posts do blog
         function loadBlogPosts() {
-            // Os dados do blog agora estão diretamente no código para evitar erros de carregamento de arquivo.
-            // Para adicionar um novo post, basta copiar um dos blocos abaixo e alterar o conteúdo.
             const blogData = {
-                "posts": [
-                    {
-                        "category": "MÉTRICAS",
-                        "title": "5 Métricas que todo pequeno negócio deveria acompanhar",
-                        "summary": "Pare de se perder em planilhas! Foco no que realmente importa para o crescimento do seu negócio digital.",
-                        "image": "https://placehold.co/600x400/0d2449/f97316?text=Métricas",
-                        "url": "#"
-                    },
-                    {
-                        "category": "ESTRATÉGIA",
-                        "title": "Intuição e Dados: A sabedoria ancestral na era do BI",
-                        "summary": "Como a sua bagagem cultural pode ser o seu maior diferencial na hora de analisar dados e definir estratégias.",
-                        "image": "https://placehold.co/600x400/f97316/0d2449?text=Estratégia",
-                        "url": "#"
-                    },
-                    {
-                        "category": "FERRAMENTAS",
-                        "title": "Looker Studio: Como criar seu primeiro dashboard de graça",
-                        "summary": "Um passo a passo descomplicado para você começar a visualizar seus dados de forma profissional e gratuita.",
-                        "image": "https://placehold.co/600x400/1e293b/ffffff?text=Ferramentas",
-                        "url": "#"
-                    }
-                ]
+                "posts": [{"category": "MÉTRICAS", "title": "5 Métricas que todo pequeno negócio deveria acompanhar", "summary": "Pare de se perder em planilhas! Foco no que realmente importa para o crescimento do seu negócio digital.","image": "https://placehold.co/600x400/0d2449/f97316?text=Métricas","url": "#"},{"category": "ESTRATÉGIA","title": "Intuição e Dados: A sabedoria ancestral na era do BI","summary": "Como a sua bagagem cultural pode ser o seu maior diferencial na hora de analisar dados e definir estratégias.","image": "https://placehold.co/600x400/f97316/0d2449?text=Estratégia","url": "#"},{"category": "FERRAMENTAS","title": "Looker Studio: Como criar seu primeiro dashboard de graça","summary": "Um passo a passo descomplicado para você começar a visualizar seus dados de forma profissional e gratuita.","image": "https://placehold.co/600x400/1e293b/ffffff?text=Ferramentas","url": "#"}]
             };
 
             const posts = blogData.posts;
             const blogContainer = document.getElementById('blog-container');
-            
-            if (!posts || posts.length === 0) {
-                blogContainer.innerHTML = '<p class="text-center col-span-3 text-slate-500">Nenhum post encontrado.</p>';
-                return;
-            }
-
+            if (!posts || posts.length === 0) { blogContainer.innerHTML = '<p class="text-center col-span-3 text-slate-500">Nenhum post encontrado.</p>'; return; }
             blogContainer.innerHTML = '';
-
             posts.forEach(post => {
                 const postElement = document.createElement('div');
                 postElement.className = 'card-hover-effect bg-slate-50 rounded-lg overflow-hidden border border-slate-200';
-                
-                postElement.innerHTML = `
-                    <img src="${post.image}" alt="Imagem do post sobre ${post.title}" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <span class="text-sm font-semibold text-orange-eko">${post.category}</span>
-                        <h3 class="font-oswald text-2xl font-bold text-navy-eko mt-2 mb-3">${post.title}</h3>
-                        <p class="text-slate-600 mb-4">${post.summary}</p>
-                        <a href="${post.url}" class="font-bold text-orange-eko hover:underline">Leia mais →</a>
-                    </div>
-                `;
-                
+                postElement.innerHTML = `<img src="${post.image}" alt="Imagem do post sobre ${post.title}" class="w-full h-48 object-cover"><div class="p-6"><span class="text-sm font-semibold text-orange-eko">${post.category}</span><h3 class="font-oswald text-2xl font-bold text-navy-eko mt-2 mb-3">${post.title}</h3><p class="text-slate-600 mb-4">${post.summary}</p><a href="${post.url}" class="font-bold text-orange-eko hover:underline">Leia mais →</a></div>`;
                 blogContainer.appendChild(postElement);
             });
         }
 
-        // Executa a função quando o conteúdo da página é carregado
-        document.addEventListener('DOMContentLoaded', loadBlogPosts);
+        // Função para carregar e exibir os estudos de caso
+        function loadCaseStudies() {
+            const caseStudiesData = {
+                "cases": [{"client": "Negócio de Impacto Periférico","title": "Aumento de 25% nas vendas com análise de público","summary": "Identificamos padrões de consumo e otimizamos a estratégia de marketing digital, resultando em um crescimento significativo.","image": "https://placehold.co/600x400/0d2449/ffffff?text=Case+1","url": "#"},{"client": "Empreendedora Digital","title": "Redução de 40% no custo por lead com dashboards","summary": "Criamos um dashboard no Looker Studio que deu clareza sobre os investimentos em anúncios, otimizando o orçamento.","image": "https://placehold.co/600x400/1e293b/f97316?text=Case+2","url": "#"},{"client": "Startup de Tecnologia","title": "Validação de MVP e definição de KPIs para investimento","summary": "Estruturamos os indicadores de performance essenciais (KPIs) que ajudaram a startup a captar sua primeira rodada de investimento.","image": "https://placehold.co/600x400/f97316/ffffff?text=Case+3","url": "#"}]
+            };
+
+            const cases = caseStudiesData.cases;
+            const caseStudiesContainer = document.getElementById('case-studies-container');
+            if (!cases || cases.length === 0) { caseStudiesContainer.innerHTML = '<p class="text-center col-span-3 text-slate-500">Nenhum estudo de caso encontrado.</p>'; return; }
+            caseStudiesContainer.innerHTML = '';
+            cases.forEach(caseItem => {
+                const caseElement = document.createElement('div');
+                caseElement.className = 'card-hover-effect bg-white rounded-lg overflow-hidden border border-slate-200';
+                caseElement.innerHTML = `<img src="${caseItem.image}" alt="Imagem do estudo de caso sobre ${caseItem.title}" class="w-full h-48 object-cover"><div class="p-6"><span class="text-sm font-semibold text-orange-eko">${caseItem.client}</span><h3 class="font-oswald text-2xl font-bold text-navy-eko mt-2 mb-3">${caseItem.title}</h3><p class="text-slate-600 mb-4">${caseItem.summary}</p><a href="${caseItem.url}" class="font-bold text-orange-eko hover:underline">Ver detalhes →</a></div>`;
+                caseStudiesContainer.appendChild(caseElement);
+            });
+        }
+        
+        // SCRIPT PARA CONECTAR FORMULÁRIO AO GOOGLE SHEETS
+        const leadForm = document.getElementById('lead-form');
+        const submitButton = document.getElementById('submit-button');
+        const formMessage = document.getElementById('form-message');
+
+        leadForm.addEventListener('submit', e => {
+            e.preventDefault(); // Impede o envio padrão do formulário
+
+            // URL do seu Web App do Google Apps Script (você vai colar a sua aqui)
+            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyadKN68c4h3Wkn9D8f9L184iVwR-g2lFHh1LXv2UJjNKCfTswmOejRHFzjLAJIDSE1lw/exec";
+
+            submitButton.disabled = true;
+            submitButton.textContent = 'Enviando...';
+            
+            // Cria um objeto FormData com os dados do formulário
+            const formData = new FormData(leadForm);
+
+            // Envia os dados para o script do Google
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.result === 'success') {
+                    formMessage.textContent = 'Sucesso! Verifique seu e-mail.';
+                    formMessage.style.color = '#34d399'; // Verde
+                    leadForm.reset(); // Limpa o formulário
+                } else {
+                    throw new Error(data.message || 'Ocorreu um erro.');
+                }
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                formMessage.textContent = 'Ops! Algo deu errado. Tente novamente.';
+                formMessage.style.color = '#f87171'; // Vermelho
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Quero meu E-book!';
+            });
+        });
+
+        // Executa as funções de carregamento quando o conteúdo da página é carregado
+        document.addEventListener('DOMContentLoaded', () => {
+            loadBlogPosts();
+            loadCaseStudies();
+        });
     </script>
 
 </body>
