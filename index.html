@@ -215,7 +215,8 @@
                         <h2 class="font-oswald text-4xl font-bold text-white uppercase">Decida com Dados!</h2>
                         <p class="mt-4 text-lg text-slate-300">
                             Baixe gratuitamente o ebook “Decida com Dados” e descubra como aplicar análise de dados no
-                            dia a dia do seu negócio — mesmo que você não seja da área técnica!
+                            dia a dia do seu negócio — mesmo que você não seja da área técnica! <br>
+                            
                         </p>
                     </div>
                     <div class="mt-8 lg:mt-0 lg:w-1/2 lg:pl-12">
@@ -473,7 +474,7 @@
             e.preventDefault(); // Impede o envio padrão do formulário
 
             // URL do seu Web App do Google Apps Script
-            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxNSZlKOlZ3A8uSyW4Ia_iTNsETaW9o4X9iWn8xtozZZB3L7g_QmjZdvLU-sQkVwfKm9Q/exec";
+            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzfIUisCUA51sGrRmV3PCsvM-a2hka9WDoe5C4ewSgy5Ee5dkOdwR1CiMWDlb9EeqqTkA/exec";
 
             submitButton.disabled = true;
             submitButton.textContent = 'Enviando...';
@@ -487,7 +488,7 @@
                 .then(res => res.json())
                 .then(data => {
                     if (data.result === 'success') {
-                        formMessage.textContent = 'Sucesso! Verifique seu e-mail.';
+                        formMessage.textContent = 'Sucesso! Enviamos o link para a planilha no seu e-mail.';
                         formMessage.style.color = '#34d399'; // Verde
                         leadForm.reset();
                     } else {
